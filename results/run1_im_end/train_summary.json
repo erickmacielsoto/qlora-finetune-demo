@@ -1,0 +1,122 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen2.5-0.5B",
+    "output_dir": "outputs",
+    "max_length": 512,
+    "train_examples": 7473,
+    "epochs": 1.0,
+    "per_device_batch_size": 8,
+    "grad_accum": 2,
+    "learning_rate": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "lora_dropout": 0.05,
+    "time_budget_min": 28.0,
+    "quantize_4bit": true,
+    "seed": 0,
+    "audit_lengths": "128,192,256,384,512"
+  },
+  "data": {
+    "rows": 7473,
+    "kept": 7473,
+    "dropped_overlength": 0,
+    "naive_broken": 0,
+    "naive_fully_masked": 0,
+    "kept_broken": 0
+  },
+  "truncation_audit": {
+    "128": {
+      "naive_broken": 7293,
+      "naive_fully_masked": 1583,
+      "guarded_dropped": 7293,
+      "guarded_broken": 0
+    },
+    "192": {
+      "naive_broken": 3996,
+      "naive_fully_masked": 43,
+      "guarded_dropped": 3996,
+      "guarded_broken": 0
+    },
+    "256": {
+      "naive_broken": 1313,
+      "naive_fully_masked": 1,
+      "guarded_dropped": 1313,
+      "guarded_broken": 0
+    },
+    "384": {
+      "naive_broken": 62,
+      "naive_fully_masked": 0,
+      "guarded_dropped": 62,
+      "guarded_broken": 0
+    },
+    "512": {
+      "naive_broken": 0,
+      "naive_fully_masked": 0,
+      "guarded_dropped": 0,
+      "guarded_broken": 0
+    }
+  },
+  "trainable_params": 8798208,
+  "total_params": 502830976,
+  "train_seconds": 1035.7,
+  "global_steps": 468,
+  "epochs_completed": 1.0,
+  "first_logged_loss": 0.9625921249389648,
+  "last_logged_loss": 0.6277508735656738,
+  "peak_gpu_mem_gb": 5.32,
+  "loss_curve": [
+    0.9625921249389648,
+    0.7540607452392578,
+    0.7222011089324951,
+    0.6990195751190186,
+    0.7049698829650879,
+    0.6392173290252685,
+    0.644791841506958,
+    0.6798632621765137,
+    0.6905562400817871,
+    0.6628294467926026,
+    0.6922487258911133,
+    0.6348517417907715,
+    0.6633817672729492,
+    0.6809075832366943,
+    0.6292451858520508,
+    0.6452859401702881,
+    0.6538943290710449,
+    0.6553800106048584,
+    0.6400824546813965,
+    0.6462242126464843,
+    0.6294989109039306,
+    0.6365364074707032,
+    0.6704357147216797,
+    0.6406186580657959,
+    0.6044661521911621,
+    0.6766295909881592,
+    0.674714994430542,
+    0.6088373184204101,
+    0.6271088123321533,
+    0.6162906646728515,
+    0.666584825515747,
+    0.6007473945617676,
+    0.6162939071655273,
+    0.6180428504943848,
+    0.6722981452941894,
+    0.6661949157714844,
+    0.6397858619689941,
+    0.6268568992614746,
+    0.6226376533508301,
+    0.6697003841400146,
+    0.6181454181671142,
+    0.6366328716278076,
+    0.6460440158843994,
+    0.641469669342041,
+    0.6040253162384033,
+    0.6277508735656738
+  ],
+  "versions": {
+    "torch": "2.14.1+cu126",
+    "transformers": "5.22.2",
+    "peft": "0.21.2",
+    "trl": "1.17.1",
+    "bitsandbytes": "0.50.2"
+  }
+}

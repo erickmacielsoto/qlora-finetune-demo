@@ -1,0 +1,49 @@
+{
+  "summaries": [
+    {
+      "model": "hf:outputs/base-chat",
+      "n": 300,
+      "accuracy": 0.28,
+      "ci_low": 0.23221902177629877,
+      "ci_high": 0.333343885649151,
+      "parse_failures": 0,
+      "hit_token_limit": 178,
+      "latency_p50_s": 0.942210012500027,
+      "latency_p95_s": 1.2273942500000885,
+      "completion_tokens_mean": 297.4766666666667,
+      "throughput_tok_s": 308.08228917816564,
+      "wall_time_s": 289.67260739999983,
+      "gpu_cost_usd": 0.016092922633333322,
+      "cost_per_1k_correct_usd": 0.19158241230158718
+    },
+    {
+      "model": "hf:outputs/merged",
+      "n": 300,
+      "accuracy": 0.3,
+      "ci_low": 0.2509396634215156,
+      "ci_high": 0.3541175251470751,
+      "parse_failures": 0,
+      "hit_token_limit": 240,
+      "latency_p50_s": 0.9443572374998439,
+      "latency_p95_s": 1.0356415687501794,
+      "completion_tokens_mean": 328.25666666666666,
+      "throughput_tok_s": 342.4592632574928,
+      "wall_time_s": 287.5582895999978,
+      "gpu_cost_usd": 0.01597546053333321,
+      "cost_per_1k_correct_usd": 0.1775051170370357
+    }
+  ],
+  "comparisons": [
+    {
+      "model_a": "hf:outputs/base-chat",
+      "model_b": "hf:outputs/merged",
+      "accuracy_diff": -0.02,
+      "diff_ci_low": -0.08333333333333333,
+      "diff_ci_high": 0.043333333333333335,
+      "only_a_correct": 45,
+      "only_b_correct": 51,
+      "mcnemar_p": 0.6100682661051768,
+      "significant": false
+    }
+  ]
+}
