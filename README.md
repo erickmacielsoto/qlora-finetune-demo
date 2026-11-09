@@ -16,17 +16,17 @@ is what you think it is, and measuring the result with the same harness and prom
 
 ```mermaid
 flowchart LR
-    G[(GSM8K train<br/>7,473 problems)] --> F[format: strip &lt;&lt;calc&gt;&gt;,<br/>'#### N' → 'The answer is: N']
-    F --> T[chat template prompt +<br/>completion + &lt;|im_end|&gt;]
-    T --> GU{label guard<br/>fits max_length?<br/>EOS supervised?}
-    GU -- no --> X[drop example<br/>and count it]
-    GU -- yes --> DS[(input_ids + labels<br/>prompt = -100)]
-    DS --> TR[TRL SFTTrainer<br/>Qwen2.5-0.5B in 4-bit NF4<br/>LoRA r=16 all-linear]
-    TR --> AD[adapter]
-    AD --> M[merge into bf16 base]
-    B[base model, same<br/>generation config] --> E[llm-eval-harness<br/>300 GSM8K test items]
+    G[("GSM8K train<br/>7,473 problems")] --> F["format: strip #lt;#lt;calc#gt;#gt;,<br/>#quot;#### N#quot; → #quot;The answer is: N#quot;"]
+    F --> T["chat template prompt +<br/>completion + #lt;#124;im_end#124;#gt;"]
+    T --> GU{"label guard<br/>fits max_length?<br/>EOS supervised?"}
+    GU -- no --> X["drop example<br/>and count it"]
+    GU -- yes --> DS[("input_ids + labels<br/>prompt = -100")]
+    DS --> TR["TRL SFTTrainer<br/>Qwen2.5-0.5B in 4-bit NF4<br/>LoRA r=16 all-linear"]
+    TR --> AD["adapter"]
+    AD --> M["merge into bf16 base"]
+    B["base model, same<br/>generation config"] --> E["llm-eval-harness<br/>300 GSM8K test items"]
     M --> E
-    E --> R[accuracy, Wilson CI,<br/>McNemar, latency]
+    E --> R["accuracy, Wilson CI,<br/>McNemar, latency"]
 ```
 
 * `data.py` – prompt (identical to the harness prompt, enforced by a test) and solution formatting.
